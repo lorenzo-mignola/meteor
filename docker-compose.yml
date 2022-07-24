@@ -4,7 +4,7 @@ services:
   mongodb:
     image: mongo
     hostname: mongodb
-    restart: always
+    restart: unless-stopped
     container_name: mongodb
     ports:
       - 27017:27017
