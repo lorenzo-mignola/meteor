@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  mongodb:
+    image: mongo
+    hostname: mongodb
+    restart: always
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    networks:
+      - mongo-network
+    command: ["--replSet", "replicaSet", "--bind_ip_all"]
+
+networks:
+  mongo-network:
+    driver: bridge

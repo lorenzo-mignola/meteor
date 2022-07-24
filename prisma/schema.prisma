@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Meteorite {
+  id            Int         @id @map("_id")
+  name          String
+  nametype      String
+  recclass      String
+  mass          Float?
+  fall          String
+  year          DateTime?
+  reclat        Float?
+  reclong       Float?
+  geolocation   Geolocation @relation(fields: [geolocationId], references: [id])
+  geolocationId String      @db.ObjectId
+}
+
+model Geolocation {
+  id          String      @id @default(auto()) @map("_id") @db.ObjectId
+  type        String
+  Meteorite   Meteorite[]
+  coordinates Float[]
+}

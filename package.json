@@ -26,6 +26,7 @@
 		"eslint-plugin-svelte3": "^4.0.0",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
+		"prisma": "^4.1.0",
 		"svelte": "^3.46.0",
 		"svelte-check": "^2.7.1",
 		"svelte-preprocess": "^4.10.6",
@@ -37,6 +38,10 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.5.0",
+		"@prisma/client": "^4.1.0",
 		"cookie": "^0.4.1"
+	},
+	"prisma": {
+		"seed": "node --loader ts-node/esm prisma/seed.ts"
 	}
 }
