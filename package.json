@@ -59,8 +59,8 @@
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.5.0",
 		"@prisma/client": "^4.1.0",
-		"cookie": "^0.4.1",
-		"d3": "^7.6.1"
+		"billboard.js": "^3.5.1",
+		"cookie": "^0.4.1"
 	},
 	"prisma": {
 		"seed": "node --loader ts-node/esm prisma/seed.ts"
